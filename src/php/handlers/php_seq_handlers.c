@@ -84,7 +84,7 @@ static void php_ds_seq_unset_dimension
 
     } else if (Z_TYPE_P(offset) == IS_NULL) {
         index = 0;
-        php_docref_error(E_DEPRECATED, "Using null as array offset is deprecated");
+        php_docref_error(NULL, E_DEPRECATED, "Using null as array offset is deprecated");
     } else if (!zend_parse_arg_long(offset, &index, &is_null, false, 0)) {
         INTEGER_INDEX_REQUIRED(offset);
         return;
